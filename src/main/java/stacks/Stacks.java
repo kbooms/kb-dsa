@@ -1,7 +1,16 @@
+package stacks;
+
 import java.util.Scanner;
 import java.util.Stack;
 
 public class Stacks {
+
+    /*
+     * Stack = LIFO (Last in-First out) data Structure
+     * stores objects into a sort of "vertical tower"
+     * push() to add to the top
+     * pop() to remove from the top
+     */
 
     public static Stack makeStack() {
         Stack<String> stack = new Stack<String>();
@@ -14,12 +23,7 @@ public class Stacks {
     }
 
     public static void main(String[] args) {
-        /*
-         * Stack = LIFO (Last in-First out) data Structure
-         * stores objects into a sort of "vertical tower"
-         * push() to add to the top
-         * pop() to remove from the top
-         */
+
         Stack<String> stack = new Stack<String>();
         // this empty() method returns a boolean based on whether or not a stack is empty
         System.out.println(stack.empty() + ", the stack is empty");
@@ -49,6 +53,10 @@ public class Stacks {
         Scanner in = new Scanner(System.in);
         System.out.print("Position search | Enter a stack item: ");
         String search = in.nextLine();
-        System.out.println(search + " location in stack: " + stack.search(search));
+        if (stack.contains(search)) {
+            System.out.println(search + " location in stack: " + stack.search(search));
+        } else {
+            System.out.println(search + " not found in Stack");
+        }
     }
 }
